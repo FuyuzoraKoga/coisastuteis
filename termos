@@ -6,7 +6,6 @@ while true $t != "termos"
 do
 clear
 echo "Termos do Script..."
-sleep 1 
 echo "Não me responsabilizor por enventuais danos ao seu aparelho utilize por sua conta e risco"
 echo "================================================"
 echo "Termos do Script"
