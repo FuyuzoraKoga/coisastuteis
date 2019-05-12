@@ -6,7 +6,7 @@ while true $x != "teste"
 do
 clear
 echo "================================================"
-echo "RSD Motorola LINUX"
+echo "Motorola Linux Flash"
 echo "1) Instalar um programas Fasboot / ADB"
 echo "2) Remover programas Fasboot / ADB"
 echo "3) Baixar Firmware ( so Utilize caso tenha o link direto da firmware"
