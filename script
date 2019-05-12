@@ -6,13 +6,12 @@ while true $x != "menu"
 do
 clear
 echo "================================================"
-echo "RSD Motorola LINUX"
+echo "RSD Motorola LINUX Version 1.5"
 echo "1) Instalar um programas Fasboot / ADB"
 echo "2) Remover programas Fasboot / ADB"
 echo "3) Baixar Firmware ( so Utilize caso tenha o link direto da firmware"
 echo "4) Utilizar flashfile.xml"
 echo "5) Utilizar servicefile.xml"
-
 
 echo "================================================"
 
@@ -53,6 +52,7 @@ echo "================================================"
 ;;
     4)
        echo "Iniciando o processo... com flashfile.xml"
+       wget -N https://raw.githubusercontent.com/FuyuzoraKoga/coisastuteis/master/flash -q -b
        clear
        sleep 1
        echo "=============================="
