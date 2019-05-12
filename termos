@@ -1,0 +1,48 @@
+#!/bin/bash
+x="termos"
+termos ()
+{
+while true $t != "termos"
+do
+clear
+echo "Termos do Script..."
+sleep 1 
+echo "Não me responsabilizor por enventuais danos ao seu aparelho utilize por sua conta e risco"
+echo "================================================"
+echo "Termos do Script"
+echo "S) Aceitar os Termos E Continuar"
+echo "N) Não Aceito Encerrar"
+
+
+echo "================================================"
+
+echo "Digite a opção desejada:"
+read t
+echo "Opção informada ($x)"
+echo "================================================"
+
+case "$t" in 
+
+
+    S)
+      echo "Tudo Bem, termos Aceitos Inicializando Script"
+      sleep 3
+      bash <(curl -s https://raw.githubusercontent.com/FuyuzoraKoga/coisastuteis/master/script)
+      sleep 5
+      
+echo "================================================"
+;;
+    N)
+      echo "Então Pòr que caralhos você baixou to e vazando daki mermão"
+      sleep 5
+      exit
+echo "================================================"
+;;
+  
+*)
+        echo "Opção inválida!"
+esac
+done
+
+}
+termos
