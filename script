@@ -1,0 +1,87 @@
+#!/bin/bash
+x="menu"
+menu ()
+{
+while true $x != "menu"
+do
+clear
+echo "================================================"
+echo "RSD Motorola LINUX"
+echo "1) Instalar um programas Fasboot / ADB"
+echo "2) Remover programas Fasboot / ADB"
+echo "3) Baixar Firmware ( so Utilize caso tenha o link direto da firmware"
+echo "4) Utilizar flashfile.xml"
+echo "5) Utilizar servicefile.xml"
+
+
+echo "================================================"
+
+echo "Digite a opção desejada:"
+read x
+echo "Opção informada ($x)"
+echo "================================================"
+
+case "$x" in 
+
+
+    1)
+      echo "Executando Script de Instalação"
+      sleep 5
+      bash <(curl -s https://raw.githubusercontent.com/corbindavenport/nexus-tools/master/install.sh)
+      sleep 5
+      
+echo "================================================"
+;;
+    2)
+      echo "Executando Script de Remoção"
+      bash <(curl -s https://raw.githubusercontent.com/corbindavenport/nexus-tools/master/uninstall.sh)
+      sleep 5
+echo "================================================"
+;;
+   3)
+      echo "Executando Script para Baixar a Firmware"
+      sleep 2
+      echo "Informe link direto da Firmware ( recomendo https://firmware.center ou https://mirrors.lolinet.com )"
+      read firmware
+      wget -O firmware.zip $firmware -q --show-progress && unzip firmware.zip && rm firmware.zip
+      sleep 1
+      echo "Download Finalizado"
+      sleep 2
+      echo "Voltando pro Menu"
+      sleep 2
+echo "================================================"
+;;
+    4)
+       echo "Iniciando o processo... com flashfile.xml"
+       clear
+       sleep 1
+       echo "=============================="
+       echo " Aperte Enter Para Continuar"
+       echo "=============================="
+       read 
+       clear
+       bash ./flash flashfile.xml
+       sleep 5
+echo "================================================"
+;;      
+     5)  
+       echo "Iniciando o processo... com flashfile.xml"
+       wget -N https://raw.githubusercontent.com/FuyuzoraKoga/coisastuteis/master/flash -q -b
+       clear
+       sleep 1
+       echo "=============================="
+       echo " Aperte Enter Para Continuar"
+       echo "=============================="
+       read 
+       clear
+       bash ./flash servicefile.xml
+       sleep 5
+echo "================================================"
+;;   
+*)
+        echo "Opção inválida!"
+esac
+done
+
+}
+menu
