@@ -1,6 +1,4 @@
 #!/bin/sh
-# Liboicl/RootJunky.com - Flash RSDLite ROM files on Linux
-# Usage: rsd-flash [XML file]
 function platform
 {       platform=`uname`
         if [ $(uname -p) = 'powerpc' ]; then
@@ -9,13 +7,13 @@ function platform
         fi
  
         if [ "$platform" = 'Darwin' ]; then
-        ADB="files/./adbosx"
-        FASTBOOT="files/./fastbootosx"
+        ADB="adb"
+        FASTBOOT="fastboot"
         MD5SUM="md5 -r"
         version="OS X"
         else
-        ADB="files/./adblinux"
-        FASTBOOT="files/./fastbootlinux"
+        ADB="adb"
+        FASTBOOT="fastboot"
         MD5SUM="md5sum"
         version="Linux"
                
@@ -23,16 +21,18 @@ function platform
 }
 
 platform
-	echo   """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    echo   "    ___  ____  ____  _____    ____  ___  ____ ____  __  ________  _  _    "
-    echo   "   / _ \/ _  \/ _  \/_  _/_  / / / / / \/ / //_/\ \/ / / __/ _  \/ \/ \   "
-    echo   "  / , _/ |_| / |_| / / / / // / /_/ /    /  <    \  /_/ /_/ |_| / ,  , \  "
-    echo   " /_/|_|\____/\____/ /_/  \___/\____/_/\_/_/\_/   /_/_/___/\____/_/ \/ \_\ "
-    echo   "                                                                          "
-    echo   """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	echo "888b     d888          888                              888                8888888888 888                   888      ";
+echo "8888b   d8888          888                              888                888        888                   888      ";
+echo "88888b.d88888          888                              888                888        888                   888      ";
+echo "888Y88888P888  .d88b.  888888  .d88b.  888d888  .d88b.  888  8888b.        8888888    888  8888b.  .d8888b  88888b.  ";
+echo "888 Y888P 888 d88\"\"88b 888    d88\"\"88b 888P\"   d88\"\"88b 888     \"88b       888        888     \"88b 88K      888 \"88b ";
+echo "888  Y8P  888 888  888 888    888  888 888     888  888 888 .d888888       888        888 .d888888 \"Y8888b. 888  888 ";
+echo "888   \"   888 Y88..88P Y88b.  Y88..88P 888     Y88..88P 888 888  888       888        888 888  888      X88 888  888 ";
+echo "888       888  \"Y88P\"   \"Y888  \"Y88P\"  888      \"Y88P\"  888 \"Y888888       888        888 \"Y888888  88888P' 888  888 ";
+echo "                                                                                                                     ";
     echo "----------------------------------------------------------------------------"
-	echo "Welcome to RSD Lite For Mac and Linux press enter to start your flash"
-	echo "----------------------------------------------------------------------------"
+      echo "Bem vindo a ferramente de flash motorola pra linux"
+    echo "----------------------------------------------------------------------------"
     		    read \n
 getValue(){
 	val=$(echo "$1" | sed "s/.*$2=\"\([^\"]*\).*/\1/")
