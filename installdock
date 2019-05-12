@@ -1,0 +1,68 @@
+#!/bin/bash
+x="termos"
+termos ()
+{
+while true $t != "termos"
+do
+clear
+echo "Termos do Script..."
+echo "Não me responsabilizor por enventuais danos ao seu aparelho utilize por sua conta e risco"
+echo "================================================"
+echo "Termos do Script"
+echo "1) Docker (Sozinho)"
+echo "2) Docker + Docker Composer"
+echo "3) Docker Composer"
+
+
+echo "================================================"
+
+echo "Digite a opção desejada:"
+read t
+echo "Opção informada ($x)"
+echo "================================================"
+
+case "$t" in 
+
+
+    1)
+      echo "Olá, Aguarde um Momento Estamos Preparando Tudo"
+      sleep 2
+      clear
+      echo "instalando Somente Docker"
+      sleep 1 
+      bash <(curl -ssl https://get.docker.com) > /dev/null
+      sleep 1
+      
+echo "================================================"
+;;
+    2)
+      echo "Olá, Aguarde um Momento Estamos Preparando Tudo"
+      sleep 2
+      clear
+      echo "instalando Docker + Composer"
+      sleep 1 
+      bash <(curl -ssl https://get.docker.com) > /dev/null
+      sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      sudo chmod +x /usr/local/bin/docker-compose
+      sleep 1
+echo "================================================"
+;;
+      3)
+      echo "Olá, Aguarde um Momento Estamos Preparando Tudo"
+      sleep 2
+      clear
+      echo "instalando Somenten o Composer"
+      sleep 1 
+      sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      sudo chmod +x /usr/local/bin/docker-compose
+      sleep 1
+echo "================================================"
+;;
+  
+*)
+        echo "Opção inválida!"
+esac
+done
+
+}
+termos
