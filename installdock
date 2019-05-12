@@ -1,12 +1,11 @@
 #!/bin/bash
-x="termos"
-termos ()
+x="sdocker"
+sdocker ()
 {
-while true $t != "termos"
+while true $t != "sdocker"
 do
 clear
-echo "Termos do Script..."
-echo "Não me responsabilizor por enventuais danos ao seu aparelho utilize por sua conta e risco"
+echo "Instalador do Docker v1.0"
 echo "================================================"
 echo "Termos do Script"
 echo "1) Docker (Sozinho)"
@@ -18,7 +17,7 @@ echo "================================================"
 
 echo "Digite a opção desejada:"
 read t
-echo "Opção informada ($x)"
+echo "Opção informada ($t)"
 echo "================================================"
 
 case "$t" in 
@@ -65,4 +64,4 @@ esac
 done
 
 }
-termos
+sdocker
