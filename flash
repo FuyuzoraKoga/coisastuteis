@@ -61,7 +61,7 @@ if hash "$FASTBOOT" 2>/dev/null;then
 		$cmd
 	done
 	echo "---------------------------------------------------------"
-	echo "Please check for errors then press enter to reboot device"
+	echo "Porfavor Verifique os Logs do Seu Dispositivo para verificar se tem algum erro"
 	echo "---------------------------------------------------------"
     		    read \n
 	$FASTBOOT reboot
