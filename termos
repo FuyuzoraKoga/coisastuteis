@@ -34,7 +34,8 @@ echo "================================================"
 ;;
     N)
       echo "Então Pòr que caralhos você baixou to e vazando daki mermão"
-      sleep 5
+      sleep 3
+      clear
       exit
 echo "================================================"
 ;;
