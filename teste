@@ -1,0 +1,72 @@
+#!/bin/bash
+x="teste"
+menu ()
+{
+while true $x != "teste"
+do
+clear
+echo "================================================"
+echo "RSD Motorola LINUX"
+echo "1) Instalar um programas Fasboot / ADB"
+echo "2) Remover programas Fasboot / ADB"
+echo "3) Baixar Firmware ( so Utilize caso tenha o link direto da firmware"
+echo "4) Utilizar flashfile.xml"
+echo "5) Utilizar servicefile.xml"
+
+
+echo "================================================"
+
+echo "Digite a opção desejada:"
+read x
+echo "Opção informada ($x)"
+echo "================================================"
+
+case "$x" in 
+
+
+    1)
+      echo "Executando Script de Instalação"
+      sleep 5
+      bash <(curl -s https://raw.githubusercontent.com/corbindavenport/nexus-tools/master/install.sh)
+      sleep 5
+      
+echo "================================================"
+;;
+    2)
+      echo "Executando Script de Remoção"
+      bash <(curl -s https://raw.githubusercontent.com/corbindavenport/nexus-tools/master/uninstall.sh)
+      sleep 5
+echo "================================================"
+;;
+   3)
+      echo "Teste"
+      --sleep 5
+      --wget https://raw.githubusercontent.com/FuyuzoraKoga/coisastuteis/master/rsd-flash.sh -q --show-progress
+      --sleep 3
+      --echo "Informe link direto da Firmware ( recomendo https://firmware.center ou https://mirrors.lolinet.com )"
+      ***read firmware
+      bash <(wget https://raw.githubusercontent.com/FuyuzoraKoga/coisastuteis/master/tool.zip | unzip -o)
+      --sleep 5
+echo "================================================"
+;;
+    4)
+       echo "Iniciando o processo... com flashfile.xml"
+       sleep 5
+       bash ./rsd-flash.sh flashfile.xml
+       sleep 5
+echo "================================================"
+;;      
+     5)  
+       echo "Iniciando o processo... com flashfile.xml"
+       sleep 5
+       bash ./rsd-flash.sh servicefile.xml
+       sleep 5
+echo "================================================"
+;;   
+*)
+        echo "Opção inválida!"
+esac
+done
+
+}
+menu
