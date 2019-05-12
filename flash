@@ -66,5 +66,5 @@ if hash "$FASTBOOT" 2>/dev/null;then
     		    read \n
 	$FASTBOOT reboot
 else
-	echo "fastboot not found. Please ensure it is in your path."
+	echo "FastBoot Não Encontrador Por favor execute o script instalador no Menu"
 fi
